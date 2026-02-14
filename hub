@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrimeMach Industries</title>
+
+<style>
+
+/* GLOBAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+
+nav {
+    background: #0a1f44;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+nav h1 {
+    font-size: 22px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav ul li:hover {
+    color: #4da6ff;
+}
+
+/* HERO SECTION */
+
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(10,31,68,0.8), rgba(10,31,68,0.8)),
+    url('https://images.unsplash.com/photo-1581091870627-3a5d6fdb3a2b') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    border: none;
+    background: #4da6ff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #1c7ed6;
+}
+
+/* ABOUT SECTION */
+
+.about {
+    padding: 60px 50px;
+    background: white;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    color: #0a1f44;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* SERVICES SECTION */
+
+.services {
+    padding: 60px 50px;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #0a1f44;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    width: 280px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #0a1f44;
+}
+
+.card button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: none;
+    background: #0a1f44;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #4da6ff;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    padding: 60px 50px;
+    background: #0a1f44;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #081730;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>PrimeMach Industries</h1>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div>
+        <h2>Precision Machinery. Powerful Performance.</h2>
+        <button onclick="scrollToServices()">Explore Services</button>
+    </div>
+</section>
+
+<section class="about">
+    <h2>About Us</h2>
+    <p>
+        PrimeMach Industries is a trusted machinery solutions provider specializing in
+        industrial equipment, heavy-duty systems, and performance-driven mechanical
+        innovation. With a commitment to reliability, precision engineering, and
+        long-term partnerships, we help businesses scale with advanced machinery
+        tailored to their operational needs.
+    </p>
+</section>
+
+<section class="services" id="services">
+    <h2>Our Machinery Solutions</h2>
+
+    <div class="service-container">
+
+        <div class="card">
+            <h3>Industrial Equipment</h3>
+            <p>High-performance machines designed for manufacturing and automation.</p>
+            <button onclick="showAlert('Industrial Equipment')">Learn More</button>
+        </div>
+
+        <div class="card">
+            <h3>Heavy Machinery</h3>
+            <p>Durable construction and earthmoving solutions for demanding environments.</p>
+            <button onclick="showAlert('Heavy Machinery')">Learn More</button>
+        </div>
+
+        <div class="card">
+            <h3>Custom Engineering</h3>
+            <p>Tailored mechanical systems built to optimize business productivity.</p>
+            <button onclick="showAlert('Custom Engineering')">Learn More</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@primemach.com</p>
+    <p>Phone: +1 234 567 890</p>
+</section>
+
+<footer>
+    © 2026 PrimeMach Industries. All Rights Reserved.
+</footer>
+
+<script>
+function showAlert(service) {
+    alert("You selected: " + service + ". Our team will contact you shortly.");
+}
+
+function scrollToServices() {
+    document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
